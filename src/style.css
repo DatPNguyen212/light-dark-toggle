@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-color: rgba(255, 52, 0, 0.8);
+  --heading-color: #000;
+  --background-color: #fff;
+  --button-items-color: #fff;
+  --transition-duration-button: 0.5s;
+  --button-text-font-size: 1.5rem;
+  --transition-duration-sun-moon: 0.5s;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.theme-label-heading {
+  color: var(--heading-color);
+}
+
+.theme-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--button-items-color);
+  cursor: pointer;
+  transition: transform var(--transition-duration-button) ease;
+  transform: scale(1);
+  font-size: var(--theme-button-font-size);
+}
+
+.lightdark-icon {
+  fill: var(--button-items-color);
+  margin-right: 0.5rem;
+}
+
+.theme-button:hover {
+  transform: scale(1.1);
+}
+
+.sun-moon-container {
+  --rotate-value: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  width: 100vw;
+  height: 200vmin;
+  transition: transform var(--transition-duration-sun-moon) ease;
+  transform: rotateZ(calc(var(--rotate-value) * 1deg));
+}
+
+.sun-icon,
+.moon-icon {
+  fill: var(--accent-color);
+}
+
+.sun-icon {
+  position: absolute;
+  top: 5%;
+}
+
+.moon-icon {
+  position: absolute;
+  bottom: 5%;
+  transform: rotateZ(180deg);
+}
+
+.dark {
+  --accent-color: rgba(255, 192, 0, 0.8);
+  --heading-color: #fff;
+  --background-color: #000;
+  --button-items-color: #000;
+}
