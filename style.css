@@ -6,7 +6,78 @@
   box-sizing: border-box;
 }
 
-.icon {
-  width: 1rem;
-  height: 1rem;
+:root {
+  --accent-color: rgba(255, 52, 0, 0.8);
+  --heading-color: #000;
+  --background-color: #fff;
+  --button-items-color: var(--background-color);
+  --transition-duration: 0.5s;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.theme-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--button-items-color);
+  cursor: pointer;
+  transition: transform var(--transition-duration) ease;
+  transform: scale(1);
+}
+
+.lightdark-icon {
+  fill: var(--button-items-color);
+  margin-right: 0.5rem;
+}
+
+.theme-button:hover,
+.theme-button:focus {
+  transform: scale(1.1);
+}
+
+.sun-moon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  width: 100vw;
+  height: 200vmin;
+}
+
+.sun-icon,
+.moon-icon {
+  fill: var(--accent-color);
+}
+
+.sun-icon {
+  position: absolute;
+  top: 5%;
+}
+
+.moon-icon {
+  position: absolute;
+  bottom: 5%;
+}
+
+.dark {
+  --accent-color: rgba(255, 192, 0, 0.8);
+  --heading-color: #fff;
+  --background-color: #000;
 }
