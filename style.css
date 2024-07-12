@@ -10,8 +10,9 @@
   --accent-color: rgba(255, 52, 0, 0.8);
   --heading-color: #000;
   --background-color: #fff;
-  --button-items-color: var(--background-color);
+  --button-items-color: #fff;
   --transition-duration: 0.5s;
+  --button-text-font-size: 1.5rem;
 }
 
 body {
@@ -21,6 +22,11 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.theme-label-heading {
+  color: var(--heading-color);
 }
 
 .theme-button {
@@ -37,6 +43,7 @@ body {
   cursor: pointer;
   transition: transform var(--transition-duration) ease;
   transform: scale(1);
+  font-size: var(--theme-button-font-size);
 }
 
 .lightdark-icon {
@@ -44,8 +51,7 @@ body {
   margin-right: 0.5rem;
 }
 
-.theme-button:hover,
-.theme-button:focus {
+.theme-button:hover {
   transform: scale(1.1);
 }
 
@@ -80,4 +86,5 @@ body {
   --accent-color: rgba(255, 192, 0, 0.8);
   --heading-color: #fff;
   --background-color: #000;
+  --button-items-color: #000;
 }
