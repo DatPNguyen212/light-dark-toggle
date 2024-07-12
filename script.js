@@ -13,7 +13,6 @@ themeButton.addEventListener('click', (event) => {
   // Check if getAttribute() returns null, if it does than use "empty", because includes() doesn't work with null data type.
   const bodyClassString = body.getAttribute('class') ?? 'empty'
   let isDarkMode = bodyClassString.includes('dark') === true ? true : false
-  console.log(isDarkMode ? 'Site is in dark mode' : 'Site is in light mode')
 
   // check if the site is already darkmode, but text is still "Light Mode" to fix it
   if (isDarkMode && buttonTextContent.textContent === 'Light Mode') {
@@ -21,4 +20,12 @@ themeButton.addEventListener('click', (event) => {
   } else {
     buttonTextContent.textContent = 'Light Mode'
   }
+
+  let rotateValue = Number.parseInt(
+    getComputedStyle(sunMoonContainer).getPropertyValue('--rotate-value')
+  )
+
+  rotateValue += 180
+
+  sunMoonContainer.style.setProperty('--rotate-value', rotateValue)
 })

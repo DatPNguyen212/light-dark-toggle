@@ -13,7 +13,6 @@
   --button-items-color: #fff;
   --transition-duration-button: 0.5s;
   --button-text-font-size: 1.5rem;
-  --rotation-value: 0deg;
   --transition-duration-sun-moon: 0.5s;
 }
 
@@ -58,6 +57,7 @@ body {
 }
 
 .sun-moon-container {
+  --rotate-value: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +68,7 @@ body {
   width: 100vw;
   height: 200vmin;
   transition: transform var(--transition-duration-sun-moon) ease;
-  transform: rotateZ(var(--rotation-value));
+  transform: rotateZ(calc(var(--rotate-value) * 1deg));
 }
 
 .sun-icon,
@@ -92,5 +92,4 @@ body {
   --heading-color: #fff;
   --background-color: #000;
   --button-items-color: #000;
-  --rotation-value: 180deg;
 }
