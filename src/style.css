@@ -14,6 +14,7 @@
   --transition-duration-button: 0.5s;
   --button-text-font-size: 1.5rem;
   --transition-duration-sun-moon: 0.5s;
+  --transition-duration-general: 0.5s;
 }
 
 body {
@@ -24,10 +25,12 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: var(--background-color);
+  transition: var(--transition-duration-general);
 }
 
 .theme-label-heading {
   color: var(--heading-color);
+  transition: var(--transition-duration-general);
 }
 
 .theme-button {
@@ -42,12 +45,15 @@ body {
   padding: 0.5rem 1rem;
   color: var(--button-items-color);
   cursor: pointer;
-  transition: transform var(--transition-duration-button) ease;
+  transition: transform var(--transition-duration-button) ease,
+    color var(--transition-duration-general),
+    background var(--transition-duration-general);
   transform: scale(1);
   font-size: var(--theme-button-font-size);
 }
 
 .lightdark-icon {
+  transition: fill var(--transition-duration-general);
   fill: var(--button-items-color);
   margin-right: 0.5rem;
 }
